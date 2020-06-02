@@ -30,3 +30,11 @@ Route::resource('users', 'UsersController');
 //Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 //Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
 
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
+//新增的路由功能如下。
+//HTTP请求     URL           动作                    作用
+//GET       /login   SessionsController@create    显示登录页面
+//POST      /login   SessionsController@store    创建新会话（登录）
+//DELETE    /logout  SessionsController@destroy    销毁会话（退出登录）
